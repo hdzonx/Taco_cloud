@@ -1,8 +1,7 @@
 package sia.taco_cloud;
 
-import lombok.Data;
+import java.util.List;
 
-@Data
 public class Ingredients {
     private final String id;
     private final String name;
@@ -14,8 +13,21 @@ public class Ingredients {
         this.type = type;
     }
 
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public Type getType() { return type; }
 
-    public enum Type{
+    public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
+    }
+
+    public static class Taco {
+        private String name;
+        private List<Ingredients> ingredients;
+
+        public String getName() { return name; }
+        public void setName(String name) { this.name = name; }
+        public List<Ingredients> getIngredients() { return ingredients; }
+        public void setIngredients(List<Ingredients> ingredients) { this.ingredients = ingredients; }
     }
 }
