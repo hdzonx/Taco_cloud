@@ -1,0 +1,540 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+
+# ==========================================
+# Artefatos de Build (Maven e Gradle)
+# ==========================================
+.gradle/
+out/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# ==========================================
+# Dependências e Pacotes Gerados
+# ==========================================
+*.jar
+*.war
+*.ear
+*.class
+dependency-reduced-pom.xml
+manifest.yml
+
+# ==========================================
+# Configurações da IDE (IntelliJ IDEA)
+# ==========================================
+.idea/
+workspace.xml
+tasks.xml
+
+# ==========================================
+# Configurações da IDE (Eclipse/STS - Opcional)
+# ==========================================
+
+.settings/
+.metadata
+
+# ==========================================
+# Configurações da IDE (VS Code - Opcional)
+# ==========================================
+.vscode/
+
+# ==========================================
+# Arquivos Sensíveis e de Ambiente
+# ==========================================
+.env
+application.properties
+application.yml
+secrets.yml
+*.log
+*.tmp
+*.bak
+
+# ==========================================
+# Arquivos do Sistema Operacional
+# ==========================================
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# ==========================================
+# Bancos de Dados (arquivos locais)
+# ==========================================
+# H2
+*.mv.db
+*.trace.db
+*.mv.db.*
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+
+# Dumps e backups
+*.dump
+db/*.sql
+!db/migration/*.sql
+!db/changelog/*.sql
+
+# ==========================================
+# Node.js / Frontend (React, Next.js, Vue, Angular...)
+# ==========================================
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+.yarn-integrity
+.npm/
+
+# Build output (framework-agnostic)
+dist/
+build/
+.next/
+.nuxt/
+.svelte-kit/
+.parcel-cache/
+.cache/
+.swc/
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Caches de lint/format
+.eslintcache
+.prettiercache
+
+# Logs de Node
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================================
+# Testes e Coverage
+# ==========================================
+coverage/
+.nyc_output/
+*.lcov
+.jest/
+
+# ==========================================
+# Docker
+# ==========================================
+docker-compose.override.yml
+docker-compose.*.yml
+!docker-compose.yml
+.docker/
+
+# ==========================================
+# Arquivos de Upload / Conteúdo do Usuário
+# ==========================================
+uploads/
+storage/
+public/media/
+public/images/user/
+
+# ==========================================
+# Segredos e Chaves (complemento)
+# ==========================================
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+*.jks
+*.keystore
+
+# ==========================================
+# Arquivos de exemplo (NÃO ignorar)
+# ==========================================
+!.env.example
+!application-example.properties
+!application-example.yml
+
+# ==========================================
+# Segredos e Credenciais
+# ==========================================
+# Arquivos de ambiente
+.env
+.env.*
+.env.*.local
+.env.local
+.env.production
+.env.development
+
+# Arquivos Spring com segredos
+env.properties
+application-secret.properties
+application-secret.yml
+
+# Chaves e certificados
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.truststore
+*.crt
+*.csr
+*.der
+*_keys
+*_secrets
+*_tokens
+*.secret
+*.token
+
+# SSH
+id_rsa
+id_dsa
+id_ed25519
+
+# Cloud / CI
+aws/credentials
+*.tfstate
+*.tfstate.*
+.secrets/
+
+# Exceções: templates SEM valores reais
+!application-example.yml
+!env.properties.example
+
+
+# ==========================================
+# Logs (podem conter tokens, PII, headers)
+# ==========================================
+*.log
+logs/
+log/
+audit/
+*.audit
+access.log
+error.log
+
+# ==========================================
+# Cloud / Infra como Código
+# ==========================================
+.aws/
+.gcloud/
+.azure/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+kubeconfig
+*.kubeconfig
+serviceAccountKey.json
+*serviceaccount*.json
+docker/credentials
+
+# ==========================================
+# SSH local
+# ==========================================
+.ssh/
+known_hosts
+config
+id_*
+
+# ==========================================
+# Sessões e Tokens locais
+# ==========================================
+*.session
+*.cookie
+sessions/
+*.token
+*.jwt
+*.refresh
+
+# ==========================================
+# Dados de teste com PII
+# ==========================================
+test-data/
+fixtures/real/
+*.csv          # cuidado: se for apenas estrutura, use !
+!fixtures/schema.csv
+*.xlsx
+*.xls
+
+# ==========================================
+# Executáveis (prevenção de malware)
+# ==========================================
+*.exe
+*.dll
+*.so
+*.dylib
+
+# ==========================================
+# Temporários e backups
+# ==========================================
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+
+# ==========================================
+# Credenciais de Ferramentas (complemento)
+# ==========================================
+# NPM / pnpm (tokens de auth para registries privados)
+.npmrc
+.pnpmrc
+
+# Git (HTTP basic auth)
+.netrc
+.git-credentials
+.git/config        # cuidado: só se contém tokens inline
+
+# Docker (credenciais de registry)
+.docker/config.json
+
+# Google / Firebase (OAuth client secrets)
+client_secret*.json
+firebase-service-account.json
+*-service-account.json
+
+# Genéricos (stores de credenciais)
+credentials.json
+secrets.yaml
+secrets.yml
+secrets.json
+token.json
+token_full.json
+
+# Config local (padrão *.local.* — pode conter tokens)
+*.local.json
+*.local.yml
+*.local.properties
+.envrc
+
+# Maven (credenciais de repos privados)
+~/.m2/settings.xml
+
+# Gradle (assinatura de APK)
+gradle.properties
+
+# iOS (provisioning profiles com chaves de assinatura)
+*.mobileprovision
+*.provisionprofile
+
+# AI/Agent (tokens de API em configs locais)
+.claude/settings.local.json
+.cursor/settings.local.json
+
+# ==========================================
+# Código Gerado (Protobuf, gRPC, OpenAPI, Codegen)
+# ==========================================
+# Protobuf / gRPC
+*_pb2.py
+*_pb2_grpc.py
+*.pb.go
+*.pb.java
+*.pb.cc
+*.pb.h
+gen/
+generated/
+src/gen/
+grpc/generated/
+
+# OpenAPI / Swagger (output gerado)
+openapi/generated/
+swagger-ui/
+api-docs/
+!api-docs/*.yaml      # mantenha a spec, ignore o build
+
+# Codegen genérico (Spring, MapStruct, Lombok, etc.)
+src/main/java/**/generated/
+src/test/java/**/generated/
+build/generated/
+target/generated-sources/
+target/generated-test-sources/
+
+# ==========================================
+# Infraestrutura Local (containers, k8s)
+# ==========================================
+# Docker volumes (dados persistidos localmente)
+volumes/
+docker/volumes/
+
+# Kubernetes local
+minikube/
+k3d/
+kind/
+minikube-config/
+
+# Terraform (além do tfstate)
+.terraform/
+.terraform.lock.hcl
+*.tfplan
+*.tfplan.json
+
+# ==========================================
+# Performance Profiling / JVM
+# ==========================================
+*.jfr
+*.hprof
+*.hprof.*
+*.nps
+*.jsa
+heapdump*.hprof
+thread_dump*
+jstack*
+
+# ==========================================
+# Observabilidade Local
+# ==========================================
+# Prometheus / Grafana (dados locais)
+prometheus/data/
+grafana/data/
+grafana/plugins/
+*.prom
+!prometheus/prometheus.yml
+
+# ==========================================
+# Message Queue / Cache Local
+# ==========================================
+redis/dump.rdb
+redis/appendonly.aof
+rabbitmq/mnesia/
+kafka/data/
+
+# ==========================================
+# Segurança / QA (relatórios locais)
+# ==========================================
+# Snyk / Dependabot / OWASP
+.snyk/
+snyk.json
+dependency-check-report.html
+dependency-check-report.xml
+*.sarif
+
+# SonarQube
+.sonar/
+sonar-project-local.properties
+
+# OWASP ZAP / Burp
+*.zap
+*.session.burp
+zap-reports/
+
+# ==========================================
+# CI/CD Local State
+# ==========================================
+.circleci/
+.jenkins/
+.drone/
+.gitlab-ci-local/
+.github/workflows/*.local.yml
+buildkite/
+
+# ==========================================
+# Certificados Locais de Dev
+# ==========================================
+certs/
+certificates/
+local-certs/
+!certs/README.md
+
+# ==========================================
+# Build Tools (complemento)
+# ==========================================
+# Bazel
+bazel-*
+bazel-bin/
+bazel-out/
+bazel-testlogs/
+
+# Make
+_make/
+build_output/
+
+# ==========================================
+# Python (se houver scripts de tooling)
+# ==========================================
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==========================================
+# Arquivos de Configuração Local (padrão enterprise)
+# ==========================================
+# Padrão: qualquer arquivo com sufixo .local.
+*.local.yml
+*.local.yaml
+*.local.json
+*.local.properties
+*.local.toml
+!*.local.example.*
+
+# Feature flags locais
+.feature-flags.local.json
+feature-flags.local.yml
+
+# ==========================================
+# Perfis de Produção (Spring Boot)
+# ==========================================
+application-prod.*
+application-live.*
+application-staging.*
+application-prod.properties
+application-prod.yml
+
+# ==========================================
+# Auth HTTP / Python / GPG
+# ==========================================
+*.htpasswd
+*.pypirc
+*.gpg              # chaves GPG privadas (públicas .asc ficam versionadas)
+
+# ==========================================
+# Diretório genérico de segredos
+# ==========================================
+secrets/
+
+
+.mvn/timing.properties
