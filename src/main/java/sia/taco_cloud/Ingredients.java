@@ -2,7 +2,7 @@ package sia.taco_cloud;
 
 import java.util.List;
 
-public class Ingredients {
+public class    Ingredients {
     private final String id;
     private final String name;
     private final Type type;
