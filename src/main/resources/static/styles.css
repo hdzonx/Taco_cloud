@@ -1,0 +1,163 @@
+/* static/css/styles.css */
+
+/* Importa a fonte base do Google Fonts para fallback ou uso sem ícones */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Define a fonte local se estiver usando a versão Nerd Font */
+@font-face {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    src: url('/fonts/JetBrainsMonoNerdFont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* Paleta de Cores Dark (Baseada em tons de cinza azulado escuro) */
+    --bg-body: #1a2a22;
+    --bg-card: #282b30;
+    --bg-input: #212428;
+
+    --text-primary: #f7e8b2;
+    --text-secondary: #f7e8b2;
+    --text-muted: #6c6c6c;
+
+    --accent-color: #53a8ff; /* Azul suave para links e destaques */
+    --accent-hover: #3b8dd6;
+    --border-color: #3e4249;
+
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
+
+    /* Tipografia */
+    /* Usa a fonte Nerd se disponível, senão fallback para a versão base */
+    --font-main: 'JetBrainsMonoNerd', 'JetBrains Mono', monospace;
+}
+
+/* Aplicação Global */
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Componentes de UI */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-top: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Inputs e Formulários */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    padding: 0.75rem;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Botões */
+.btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-family: var(--font-main);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+td {
+    color: var(--text-primary);
+}
+
+tr:hover td {
+    background-color: var(--bg-input);
+}
+
+/* Utilitários de Texto */
+.text-muted { color: var(--text-muted); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-error { color: var(--error); }
