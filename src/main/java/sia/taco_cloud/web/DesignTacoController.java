@@ -3,10 +3,8 @@ package sia.taco_cloud.web;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 import sia.taco_cloud.Ingredients;
 import sia.taco_cloud.Ingredients.Type;
 import sia.taco_cloud.Taco;
@@ -61,5 +59,19 @@ public class DesignTacoController {
         return ingredients.stream()
                 .filter(i -> i.getType().equals(type))
                 .collect(Collectors.toList());
+    }
+    @PostMapping
+    public String processTaco(
+             Taco taco, Errors errors,
+            @ModelAttribute TacoOrder tacoOrder) {
+
+        if (errors.hasErrors()) {
+            return "design";
+        }
+
+        tacoOrder.addTaco(taco);
+        //log.info("Processing taco: {}", taco);
+
+        return "redirect:/orders/current";
     }
 }

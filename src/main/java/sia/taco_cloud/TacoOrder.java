@@ -15,9 +15,9 @@ public class TacoOrder {
     private String ccExpiration;
     private String ccCVV;
 
-    private List<Ingredients.Taco> tacos = new ArrayList<>();
+    private List<Taco> tacos = new ArrayList<>();
 
-    public void addTaco(Ingredients.Taco taco){
+    public void addTaco(Taco taco) {
         this.tacos.add(taco);
     }
 }
