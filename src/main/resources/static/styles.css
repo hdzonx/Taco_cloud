@@ -511,3 +511,364 @@ body {
         width: 100%;
     }
 }
+
+/* ========================================
+   Taco Cloud — Página de pedidos
+   ======================================== */
+
+.order-page {
+    max-width: 900px;
+}
+
+.order-page .page-header {
+    margin-bottom: 36px;
+}
+
+.order-page .logo {
+    max-width: 170px;
+}
+
+.order-form {
+    width: 100%;
+}
+
+.order-section {
+    padding: 36px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-section .section-heading {
+    margin-bottom: 26px;
+}
+
+/* Resumo do pedido */
+
+.order-summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 24px;
+
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+}
+
+.summary-icon {
+    display: flex;
+    flex: 0 0 52px;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    background: rgba(143, 201, 168, 0.1);
+    border: 1px solid rgba(143, 201, 168, 0.16);
+    border-radius: 14px;
+
+    font-size: 25px;
+}
+
+.summary-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.summary-content h3 {
+    margin: 0 0 4px;
+
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.summary-description {
+    margin: 0 0 18px;
+
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.taco-list {
+    display: grid;
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.taco-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: var(--text-color);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.taco-bullet {
+    color: var(--secondary-color);
+}
+
+.secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 20px;
+
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.secondary-link span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    border: 1px solid var(--border-hover);
+    border-radius: 7px;
+
+    font-size: 17px;
+}
+
+.secondary-link:hover {
+    color: #b2e2c2;
+}
+
+.secondary-link:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+/* Campos do formulário */
+
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+}
+
+.form-field {
+    min-width: 0;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.field-label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-input {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 49px;
+
+    padding: 12px 15px;
+
+    background: var(--input-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-small);
+
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: var(--text-subtle);
+    opacity: 1;
+}
+
+.form-input:hover {
+    border-color: var(--border-hover);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(143, 201, 168, 0.12);
+}
+
+.form-input:focus-visible {
+    outline: none;
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: var(--error-color);
+}
+
+/* Pagamento */
+
+.payment-section {
+    background: rgba(20, 29, 23, 0.35);
+}
+
+.payment-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-bottom: 26px;
+    padding: 17px;
+
+    background: rgba(143, 201, 168, 0.06);
+    border: 1px solid rgba(143, 201, 168, 0.16);
+    border-radius: var(--radius-small);
+}
+
+.payment-icon {
+    display: flex;
+    flex: 0 0 34px;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    background: rgba(143, 201, 168, 0.1);
+    border-radius: 9px;
+
+    color: var(--secondary-color);
+    font-size: 18px;
+}
+
+.payment-notice strong {
+    display: block;
+    margin-bottom: 4px;
+
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.payment-notice p {
+    margin: 0;
+
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* Botão e rodapé */
+
+.order-submit {
+    width: 100%;
+    max-width: 360px;
+}
+
+.form-footer .footer-note {
+    line-height: 1.8;
+}
+
+.page-footer {
+    padding: 28px 12px 8px;
+
+    color: var(--text-subtle);
+    text-align: center;
+    font-size: 11px;
+}
+
+.page-footer p {
+    margin: 0;
+}
+
+.footer-separator {
+    margin: 0 7px;
+    color: var(--border-hover);
+}
+
+/* Responsividade */
+
+@media (max-width: 700px) {
+    .order-page .page-header {
+        margin-bottom: 28px;
+    }
+
+    .order-section {
+        padding: 26px 22px;
+    }
+
+    .order-section .section-heading {
+        gap: 12px;
+    }
+
+    .order-summary {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .summary-icon {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+    }
+
+    .field-grid {
+        gap: 19px 14px;
+    }
+
+    .page-footer {
+        padding-top: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-section {
+        padding: 24px 18px;
+    }
+
+    .field-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .field-full {
+        grid-column: auto;
+    }
+
+    .order-summary {
+        padding: 16px;
+    }
+
+    .order-submit {
+        max-width: none;
+    }
+
+    .payment-notice {
+        padding: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-input,
+    .secondary-link {
+        transition: none;
+    }
+}

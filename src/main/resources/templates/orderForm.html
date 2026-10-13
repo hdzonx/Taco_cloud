@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#101713" />
+
+    <title>Finalizar pedido | Taco Cloud</title>
+
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+
+<div class="page-container order-page">
+
+    <!-- Cabeçalho -->
+    <header class="page-header">
+
+        <img
+                class="logo"
+                th:src="@{/images/TacoCloud.png}"
+                alt="Taco Cloud"
+        />
+
+        <p class="eyebrow">TACO CLOUD / CHECKOUT</p>
+
+        <h1>Finalize seu pedido</h1>
+
+        <p class="subtitle">
+            Seus tacos favoritos estão quase chegando.
+            Confira seu pedido e informe os dados para a entrega.
+        </p>
+
+    </header>
+
+
+    <!-- Formulário de pedido -->
+    <main>
+
+        <form
+                class="taco-form order-form"
+                method="POST"
+                th:action="@{/orders}"
+                th:object="${tacoOrder}"
+        >
+
+            <!-- Resumo dos tacos -->
+            <section
+                    class="order-section ingredients-section"
+                    aria-labelledby="order-summary-title"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number"
+                          aria-hidden="true">01</span>
+
+                    <div>
+                        <h2 id="order-summary-title">
+                            Seu pedido
+                        </h2>
+
+                        <p>
+                            Confira as suas criações antes de continuar.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="order-summary">
+
+                    <div class="summary-icon" aria-hidden="true">
+                        🌮
+                    </div>
+
+                    <div class="summary-content">
+
+                        <h3>Tacos selecionados</h3>
+
+                        <p class="summary-description">
+                            Preparados especialmente para você.
+                        </p>
+
+                        <ul class="taco-list">
+
+                            <li th:each="taco : ${tacoOrder.tacos}">
+
+                                <span class="taco-bullet"
+                                      aria-hidden="true">✦</span>
+
+                                <span th:text="${taco.name}">
+                                    Nome do taco
+                                </span>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                        class="secondary-link"
+                        th:href="@{/design}"
+                        id="another"
+                >
+                    <span aria-hidden="true">+</span>
+                    Adicionar outro taco
+                </a>
+
+            </section>
+
+
+            <!-- Dados de entrega -->
+            <section
+                    class="order-section"
+                    aria-labelledby="delivery-title"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number"
+                          aria-hidden="true">02</span>
+
+                    <div>
+                        <h2 id="delivery-title">
+                            Dados de entrega
+                        </h2>
+
+                        <p>
+                            Informe onde devemos entregar seu pedido.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="field-grid">
+
+                    <div class="form-field field-full">
+
+                        <label class="field-label"
+                               for="deliveryName">
+                            Nome completo
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="deliveryName"
+                                th:field="*{deliveryName}"
+                                placeholder="Como podemos chamar você?"
+                                autocomplete="name"
+                                required
+                        />
+
+                    </div>
+
+
+                    <div class="form-field field-full">
+
+                        <label class="field-label"
+                               for="deliveryStreet">
+                            Endereço
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="deliveryStreet"
+                                th:field="*{deliveryStreet}"
+                                placeholder="Rua, avenida e número"
+                                autocomplete="street-address"
+                                required
+                        />
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label class="field-label"
+                               for="deliveryCity">
+                            Cidade
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="deliveryCity"
+                                th:field="*{deliveryCity}"
+                                placeholder="Sua cidade"
+                                autocomplete="address-level2"
+                                required
+                        />
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label class="field-label"
+                               for="deliveryState">
+                            Estado
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="deliveryState"
+                                th:field="*{deliveryState}"
+                                placeholder="UF"
+                                autocomplete="address-level1"
+                                required
+                        />
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label class="field-label"
+                               for="deliveryZip">
+                            CEP
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="deliveryZip"
+                                th:field="*{deliveryZip}"
+                                placeholder="00000-000"
+                                autocomplete="postal-code"
+                                inputmode="numeric"
+                                required
+                        />
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Dados de pagamento -->
+            <section
+                    class="order-section payment-section"
+                    aria-labelledby="payment-title"
+            >
+
+                <div class="section-heading">
+
+                    <span class="section-number"
+                          aria-hidden="true">03</span>
+
+                    <div>
+                        <h2 id="payment-title">
+                            Dados de pagamento
+                        </h2>
+
+                        <p>
+                            Informe os dados do cartão utilizado no pagamento.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="payment-notice">
+
+                    <span class="payment-icon"
+                          aria-hidden="true">▣</span>
+
+                    <div>
+                        <strong>Informações de pagamento</strong>
+
+                        <p>
+                            Preencha os dados abaixo para continuar
+                            com o pedido.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="field-grid">
+
+                    <div class="form-field field-full">
+
+                        <label class="field-label"
+                               for="ccNumber">
+                            Número do cartão
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="ccNumber"
+                                th:field="*{ccNumber}"
+                                placeholder="Número do cartão"
+                                inputmode="numeric"
+                                autocomplete="cc-number"
+                                required
+                        />
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label class="field-label"
+                               for="ccExpiration">
+                            Validade
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="ccExpiration"
+                                th:field="*{ccExpiration}"
+                                placeholder="MM/AA"
+                                autocomplete="cc-exp"
+                                required
+                        />
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label class="field-label"
+                               for="ccCVV">
+                            Código de segurança (CVV)
+                        </label>
+
+                        <input
+                                class="form-input"
+                                type="password"
+                                id="ccCVV"
+                                th:field="*{ccCVV}"
+                                placeholder="CVV"
+                                inputmode="numeric"
+                                autocomplete="cc-csc"
+                                required
+                        />
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Rodapé do formulário -->
+            <footer class="form-footer">
+
+                <button
+                        class="submit-button order-submit"
+                        type="submit"
+                >
+                    Confirmar pedido
+                    <span aria-hidden="true">→</span>
+                </button>
+
+                <p class="footer-note">
+                    Confira seus dados antes de confirmar o pedido.
+                </p>
+
+            </footer>
+
+        </form>
+
+    </main>
+
+
+    <!-- Rodapé da página -->
+    <footer class="page-footer">
+
+        <p>
+            <span aria-hidden="true">🌮</span>
+            Taco Cloud
+            <span class="footer-separator">·</span>
+            Feito para os amantes de tacos.
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
